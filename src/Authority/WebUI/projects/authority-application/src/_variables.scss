@@ -1,0 +1,156 @@
+// https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import "spacing";
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// https://github.com/angular/components/tree/master/src/material/core/theming
+//$primary-palette: mat-palette($mat-light-blue, 800);
+/* For use in src/lib/core/theming/_palette.scss */
+
+//http://mcg.mbitson.com/#!?mcgpalette0=%231976d2&themename=mcgtheme
+//https://stackoverflow.com/questions/41440998/how-can-i-use-custom-theme-palettes-in-angular
+$primary-colors: (
+    50 : #e3effa,
+    100 : #bad6f2,
+    200 : #8cbbe9,
+    300 : #5e9fe0,
+    400 : #3c8bd9,
+    500 : #1976d2,
+    600 : #166ecd,
+    700 : #1263c7,
+    800 : #0e59c1,
+    900 : #0846b6,
+    A100 : #e0eaff,
+    A200 : #adc6ff,
+    A400 : #7aa3ff,
+    A700 : #6191ff,
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $dark-primary-text,
+      500: $light-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+      A100: $dark-primary-text,
+      A200: $light-primary-text,
+      A400: $light-primary-text,
+      A700: $light-primary-text,
+    )
+);
+
+$orange-colors: (
+    50 : #fcf2e7,
+    100 : #f8dec3,
+    200 : #f3c89c,
+    300 : #eeb274,
+    400 : #eaa256,
+    500 : #e69138,
+    600 : #e38932,
+    700 : #df7e2b,
+    800 : #db7424,
+    900 : #d56217,
+    A100 : #ffffff,
+    A200 : #ffe3d4,
+    A400 : #ffc3a1,
+    A700 : #ffb287,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+
+$primary-palette:mat-palette($primary-colors);
+
+$accent-palette: mat-palette($mat-blue);
+$warn-palette: mat-palette($mat-red);
+$theme: mat-light-theme($primary-palette,$accent-palette, $warn-palette);
+
+$primary: mat-color($primary-palette);
+$primary700:mat-color($primary-palette,700);
+
+$accent: mat-color($accent-palette);
+$warn: mat-color($warn-palette);
+
+$orange100:mat-color($orange-colors,100);
+
+$tableGray: mat-color($mat-grey, 200);
+
+$activeTab: mat-color($mat-grey,300);
+
+$rising: mat-color($mat-green,500);
+$falling: mat-color($mat-red,500);
+
+//https://github.com/angular/components/blob/master/src/material/core/theming/_palette.scss
+$text:  mat-color($mat-light-theme-foreground, base);
+$hover:  mat-color($mat-light-theme-foreground,hover);
+$background: mat-color($mat-light-theme-background, background);
+
+$notificationDone:mat-color($mat-green,A700);
+
+$card: mat-color($mat-light-theme-background, card);
+
+$gradient: linear-gradient(180deg, rgba(25, 118, 210, 0.8) 0%, #1976d2 100%);
+$shadow: rgba(0, 0, 0, 0.3);
+/* TODO: button gradient
+  background: linear-gradient(180deg, rgba(25, 118, 210, 0.76) 0%, rgba(25, 118, 210, 0.81) 100%);
+*/
+
+// https://material.angular.io/guide/typography
+// https://meowni.ca/font-style-matcher/
+// https://github.com/angular/components/tree/master/src/material/core/typography
+// Define a custom typography config
+/*
+$app-typography: mat-typography-config(
+    $display-4:     mat-typography-level(112px, 112px, 300),
+    $display-3:     mat-typography-level(56px, 56px, 400),
+    $display-2:     mat-typography-level(45px, 48px, 400),
+    $display-1:     mat-typography-level(34px, 40px, 400),
+*/
+
+$typographyMobile: mat-typography-config( 
+    $font-family: 'Muli, sans-serif',
+    $headline: mat-typography-level(30px, 1.2, 700), // h1 , $letter-spacing: 0.07em
+    $title: mat-typography-level(14px, 1.2, 700), // h2
+    $subheading-2: mat-typography-level(16px, 1.2, 700), // h3
+    $subheading-1: mat-typography-level(7px, 1, 400), // h4
+    $caption:       mat-typography-level(10px, 1, 700), // h5, caption ?
+    $body-2:        mat-typography-level(10px, 1, 400, $font-family: 'Source Sans Pro', $letter-spacing: 0.036em), // strong
+    $body-1:        mat-typography-level(8px, 1, 400, $font-family: 'Source Sans Pro'), // TODO: Which HTML tag is used?
+    $button:        mat-typography-level(15px, 1.2, 400, $font-family: 'Source Sans Pro', $letter-spacing: 0.033em),
+    $input:         mat-typography-level(16px, 1.25, 400, $font-family: 'Source Sans Pro', $letter-spacing: 0.016em),
+);
+
+
+$typography: mat-typography-config( 
+    $font-family: 'Muli, sans-serif',
+    $headline: mat-typography-level(30px, 1.2, 700), // h1 , $letter-spacing: 0.07em
+    $title: mat-typography-level(20px, 1.2, 700), // h2
+    $subheading-2: mat-typography-level(16px, 1.2, 700), // h3
+    $subheading-1: mat-typography-level(14px, 1.2, 700), // h4
+    $caption:       mat-typography-level(14px, 1.2, 700), // h5, caption ?
+    $body-2:        mat-typography-level(16px, 1.2, 400, $font-family: 'Source Sans Pro', $letter-spacing: 0.036em), // strong
+    $body-1:        mat-typography-level(14px, 1.2, 400, $font-family: 'Source Sans Pro'), // TODO: Which HTML tag is used?
+    $button:        mat-typography-level(15px, 1.2, 400, $font-family: 'Source Sans Pro', $letter-spacing: 0.033em),
+    $input:         mat-typography-level(16px, 1.25, 400, $font-family: 'Source Sans Pro', $letter-spacing: 0.016em),
+);

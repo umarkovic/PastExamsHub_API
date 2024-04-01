@@ -1,0 +1,57 @@
+@import "../variables";
+
+::ng-deep {
+  .dialog-backdrop {
+    backdrop-filter: blur(10px);
+  }
+  .mat-dialog-container {
+    margin: 24px !important;
+    overflow-x: hidden !important;
+   // border-radius: 16px;
+    padding-left: 0;
+    padding-right: 0;
+    nav {
+      text-align: right;
+      padding-right: 24px;
+      > .mat-icon {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .mat-dialog-actions {
+    display: block; // so we can use text-align
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: unset !important; // was -24px
+    button{
+      margin-left: 24px !important;
+    }
+  }
+
+  .cdk-global-overlay-wrapper .dialog-panel {
+    color: $text;
+    background: $card;
+  }
+
+  .cdk-global-overlay-wrapper:not(.aligned) .dialog-panel {
+    display: none;
+  }
+
+  .cdk-global-overlay-wrapper.aligned .dialog-panel {
+    display: block;
+  }
+
+
+  // .mat-dialog-container section {
+  //   margin: 24px !important;
+  // }
+  // .mat-dialog-container h2 {
+  //   margin: 0 24px 0!important;
+  // }
+
+  // .mat-dialog-container h4 {
+  //   margin:0 24px 0!important;
+  // }
+
+}

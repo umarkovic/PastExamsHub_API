@@ -1,0 +1,50 @@
+::ng-deep {
+    .mat-form-field-appearance-fill .mat-form-field-flex {
+      padding-top: 4px !important; // was 12px
+    }
+    .mat-form-field-appearance-fill .mat-form-field-infix {
+      padding-bottom: 0.5em !important; // was 0.75em
+    }
+  
+    .mat-form-field-appearance-outline .mat-form-field-flex {
+      padding-top: 0px !important; 
+    }
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+      padding-top: 0em !important;
+      padding: 1em 0 1em 0;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-label-wrapper{
+      top: -1.6em;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-suffix {
+      top: .6em !important;
+      mat-icon{
+        //color: $outlineIcon !important;
+        font-size: 24px !important;
+      }
+  }
+    .mat-form-field-appearance-outline .mat-select-trigger {
+    height: 1.4em !important;
+    top: 5px !important;
+  }
+  .mat-form-field-type-mat-select .mat-form-field-label {
+    padding-top: 4px !important;
+  }
+  .mat-form-field-outline{
+    background: white;
+  
+  }
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick{
+    color: rgba($primary, 0.8)  !important;
+  }
+  
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick{
+    color: $primary  !important;
+  }
+  // .mat-form-field-appearance-outline .mat-form-field-outline {
+  //   color: white;
+  // }
+  //.mat-focused
+  
+  
+  }

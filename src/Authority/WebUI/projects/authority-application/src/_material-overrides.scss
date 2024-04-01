@@ -1,0 +1,91 @@
+@import "variables";
+
+// https://blog.angular-university.io/angular-host-context/
+::ng-deep {
+  .mat-toolbar {
+    background: $card;
+    h1 {
+      @include mat-typography-level-to-styles($typography, headline);
+    }
+  }
+
+  .mat-button-base:not(.mat-icon-button) {
+    //padding: 8px 32px !important;
+    .mat-icon {
+      margin-right: 8px;
+    } 
+  }
+
+  .mat-raised-button.mat-primary:hover{
+    background-color:$primary700;
+    box-shadow: 0px 4px 60px rgba($primary700, 0.25);
+  }
+
+  .mat-stroked-button:not([disabled]) {
+    border-width: 2px;
+    border-color: unset;
+  }
+
+
+  .mat-form-field-subscript-wrapper {
+    margin-top: -68px;
+    text-align: right;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-subscript-wrapper {
+    padding: 0 !important;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgba($primary, 0);
+  }
+  table {
+    &.mat-table {
+      width: 100%;
+    }
+  }
+  .sm-button {
+    line-height: $inset-s;
+  }
+  .border-thick {
+    border-width: 1px !important;
+  }
+  .mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+    transform: translateY(0) !important;
+    display: table-cell;
+    vertical-align: middle;
+  }
+    
+  
+  // .mat-form-field-appearance-fill {
+  //   .mat-form-field-infix {
+  //     padding: 0;
+  //   }
+  // }
+  // .mat-form-field-appearance-fill .mat-form-field-flex {
+  //   padding: 0 .75em 0 .75em;
+  // }
+
+  /* TODO: button gradient
+  background: linear-gradient(180deg, rgba(25, 118, 210, 0.76) 0%, rgba(25, 118, 210, 0.81) 100%);
+  */
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  -webkit-box-shadow: 0 0 0 30px  mix($primary,$card,5%) inset !important;
+}
+
+.progress-bar-grid {
+  height: 4px; // reserve progress-bar height
+  margin-top:-4px; //a negative margin in the amount of the height of the progress bar and the z index   not to affect our spacing
+  margin-bottom:0px !important;
+  z-index: 2 !important;
+}
+
+.error{
+  color: $warn;
+}

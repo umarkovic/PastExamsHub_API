@@ -1,0 +1,15 @@
+https://medium.com/sohoffice/the-api-first-strategy-use-swagger-to-generate-api-client-as-an-angular-library-66964ea43587
+
+
+
+//download docker
+
+open cmd as administrator and run
+        docker pull swaggerapi/swagger-codegen-cli-v3
+
+[SWAGGER]
+cd projects/authority-api-client
+linux:
+    docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli-v3 generate -i /local/openapi.json -l typescript-angular -o /local/src --additional-properties ngVersion=9.1.7
+windows:
+    docker run --rm -v %CD%:/local swaggerapi/swagger-codegen-cli-v3 generate -i /local/openapi.json -l typescript-angular -o /local/src --additional-properties ngVersion=9.1.7

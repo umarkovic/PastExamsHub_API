@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <div fxLayout="row" fxLayoutAlign="center center">
+    
+      <main fxFlex="100%" fxFlex.gt-xs="80%" fxFlex.gt-sm="684px">
+        <div><mat-progress-bar *ngIf="isWaiting" mode="indeterminate"></mat-progress-bar></div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+  
+          <div fxFlex="100%" fxFlex.xs="90%" fxFlex.gt-xs="80%" fxFlex.gt-sm="60%">
+  
+            <header>
+              <div><img src="../assets/images/naissus.png" /></div>
+              <div><strong class="error" *ngIf="errorMessage">{{errorMessage}}</strong></div>
+            </header>
+  
+            <form fxLayout="column" [formGroup]="loginForm">
+  
+              <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email"  placeholder="">
+                <mat-error *ngIf="loginForm.controls.email.errors?.email && isValidationShown">Email form is not valid</mat-error>
+                <mat-error *ngIf="loginForm.controls.email.errors?.required && isValidationShown">Email is required</mat-error>
+              </mat-form-field>
+  
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput [type]="isPasswordHidden ? 'password' : 'text'" formControlName="password" maxlength="25" placeholder="">
+                <mat-error *ngIf="loginForm.controls.password.errors?.minlength && isValidationShown">Password should have at least 8 characters</mat-error>
+                <mat-error *ngIf="loginForm.controls.password.errors?.required && isValidationShown">Password is required</mat-error>
+                <mat-icon matSuffix (click)="isPasswordHidden = !isPasswordHidden" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="isPasswordHidden">{{isPasswordHidden ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </mat-form-field>
+  
+              <mat-checkbox formControlName="rememberMe">Remember me</mat-checkbox>
+  
+              <button mat-raised-button [disabled]="isWaiting" color="primary" (click)="login()">Login</button>
+  
+            </form>
+  
+            <footer>
+              <h4><a>Forgot password?</a></h4>
+            </footer>
+  
+          </div>
+  
+        </div>
+  
+      </main>
+  
+    </div>
+  </div>
+  

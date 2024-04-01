@@ -1,0 +1,20 @@
+// https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1
+// https://dev.to/itnext/custom-theme-for-angular-material-components-series-part-3-apply-theme-e34
+@import "variables";
+
+// Override the typography in the core CSS.
+@include mat-core($typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+//@include angular-material-typography($custom-typography)
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+
+.mat-body-strong,
+.mat-body-2,
+.mat-typography strong {
+  @include mat-typography-level-to-styles($typography, body-2);
+}

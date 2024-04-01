@@ -1,0 +1,21 @@
+@import "~@angular/flex-layout/mq";
+@import "../../material-overrides";
+@import "../forms.scss";
+
+main{
+  overflow: hidden;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center; /*centers items on the line (the x-axis by default)*/
+  align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
+
+// .mat-progress-spinner {
+//     vertical-align: middle;
+//     margin:auto !important;
+//     margin-top:20vh !important;
+// } 

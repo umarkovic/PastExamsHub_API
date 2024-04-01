@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>PastExamsHub.Core.WebAPI</RootNamespace>
+    <AssemblyName>PastExamsHub.Core.WebAPI</AssemblyName>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <ResolveStaticWebAssetsInputsDependsOn>RemoveIdentityAssets</ResolveStaticWebAssetsInputsDependsOn>
+  </PropertyGroup>
+
+  <Target Name="RemoveIdentityAssets">
+    <ItemGroup>
+      <StaticWebAsset Remove="@(StaticWebAsset)" Condition="%(SourceId) == 'Microsoft.AspNetCore.Identity.UI'" />
+    </ItemGroup>
+  </Target>
+
+  <ItemGroup>
+    <Compile Remove="Filters\**" />
+    <Compile Remove="Services\**" />
+    <Content Remove="Filters\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Filters\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Filters\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="IronOcr.Languages.Serbian" Version="2020.11.2" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson" Version="5.0.16" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="5.0.12" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Base\WebAPI\Base.WebAPI.csproj" />
+    <ProjectReference Include="..\Application\Core.Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Core.Infrastructure.csproj" />
+  </ItemGroup>
+
+ 
+</Project>

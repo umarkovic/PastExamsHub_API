@@ -1,0 +1,44 @@
+   
+   // UP
+   migrationBuilder.Sql(
+             "CREATE FULLTEXT INDEX ON [dbo].ExamPeriods ([Name]) KEY INDEX [PK_ExamPeriods] WITH STOPLIST = SYSTEM",
+             suppressTransaction: true
+         );
+            migrationBuilder.Sql(
+                "ALTER FULLTEXT INDEX ON [dbo].[ExamPeriods] SET STOPLIST = OFF",
+                suppressTransaction: true
+            );
+
+            migrationBuilder.Sql(
+            "CREATE FULLTEXT INDEX ON [dbo].Courses ([Name]) KEY INDEX [PK_Courses] WITH STOPLIST = SYSTEM",
+            suppressTransaction: true
+        );
+            migrationBuilder.Sql(
+                "ALTER FULLTEXT INDEX ON [dbo].[Courses] SET STOPLIST = OFF",
+                suppressTransaction: true
+            );
+
+            migrationBuilder.Sql(
+           "CREATE FULLTEXT INDEX ON [dbo].Users ([FullName]) KEY INDEX [PK_Users] WITH STOPLIST = SYSTEM",
+           suppressTransaction: true
+       );
+            migrationBuilder.Sql(
+                "ALTER FULLTEXT INDEX ON [dbo].[Users] SET STOPLIST = OFF",
+                suppressTransaction: true
+            );
+
+
+   //DOWN
+
+
+     migrationBuilder.Sql(
+            "DROP FULLTEXT INDEX ON [dbo].ExamPeriods",
+            suppressTransaction: true);
+
+            migrationBuilder.Sql(
+            "DROP FULLTEXT INDEX ON [dbo].Courses",
+            suppressTransaction: true);
+
+            migrationBuilder.Sql(
+            "DROP FULLTEXT INDEX ON [dbo].Users",
+            suppressTransaction: true);

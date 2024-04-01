@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PastExamsHub.Core.Domain.Entities.Course">
+    <Position X="4.25" Y="3" Width="1.75" />
+    <AssociationLine Name="CourseType" Type="PastExamsHub.Core.Domain.Enums.CourseType" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.625" Y="3" />
+        <Point X="4.625" Y="2.906" />
+        <Point X="3.625" Y="2.906" />
+        <Point X="3.625" Y="2.489" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="StudyType" Type="PastExamsHub.Core.Domain.Enums.StudyType">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.485" Y="0.05" Height="0.182" Width="1.378" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAgAAAAAMAgAAgQAAAAAAAEgAAAAAAAAAAE=</HashCode>
+      <FileName>Entities\Course.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CourseType" />
+      <Property Name="StudyType" />
+      <Property Name="Lecturer" />
+      <Property Name="CreatedBy" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PastExamsHub.Core.Domain.Entities.User">
+    <Position X="4" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAkAICAEAAAAAAAAAAAAAAAAAEAAAAAAAg=</HashCode>
+      <FileName>Entities\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PastExamsHub.Core.Domain.Entities.Faculty">
+    <Position X="1.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Faculty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PastExamsHub.Core.Domain.Entities.FieldOfStudy">
+    <Position X="1.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\FieldOfStudy.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Faculty" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PastExamsHub.Core.Domain.Entities.ExamSolution">
+    <Position X="11" Y="7.5" Width="1.75" />
+    <AssociationLine Name="Exam" Type="PastExamsHub.Core.Domain.Entities.Exam" FixedToPoint="true">
+      <Path>
+        <Point X="12.062" Y="7.5" />
+        <Point X="12.062" Y="5.454" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="File" Type="PastExamsHub.Core.Domain.Entities.File" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.292" Y="7.5" />
+        <Point X="11.292" Y="6.197" />
+        <Point X="8.75" Y="6.197" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAEAAAAAAAIAQgAAABgAAAEAABAAAAAAAEAAAA=</HashCode>
+      <FileName>Entities\ExamSolution.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Exam" />
+      <Property Name="User" />
+      <Property Name="PeriodType" />
+      <Property Name="File" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PastExamsHub.Core.Domain.Entities.Exam">
+    <Position X="11" Y="3" Width="2.75" />
+    <AssociationLine Name="Type" Type="PastExamsHub.Core.Domain.Enums.ExamType">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.767" Y="0.11" Height="0.182" Width="0.54" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="CreatedBy" Type="PastExamsHub.Core.Domain.Entities.User" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.562" Y="5.454" />
+        <Point X="13.562" Y="10.125" />
+        <Point X="5.5" Y="10.125" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAAgAAAAAAAAABAAAIgAAABAAAAEAAAAAQAAAAAAAAM=</HashCode>
+      <FileName>Entities\Exam.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Course" />
+      <Property Name="Period" />
+      <Property Name="File" />
+      <Property Name="Type" />
+      <Property Name="CreatedBy" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PastExamsHub.Core.Domain.Entities.ExamPeriod">
+    <Position X="15.25" Y="3" Width="2.25" />
+    <AssociationLine Name="PeriodType" Type="PastExamsHub.Core.Domain.Enums.ExamPeriodType">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.15" Y="0.05" Height="0.182" Width="1.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Exams" Type="PastExamsHub.Core.Domain.Entities.ExamPeriodExam" FixedFromPoint="true">
+      <Path>
+        <Point X="16.688" Y="5.454" />
+        <Point X="16.688" Y="6.866" />
+        <Point X="16" Y="6.866" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="CreatedBy" Type="PastExamsHub.Core.Domain.Entities.User" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.5" Y="4.855" />
+        <Point X="18.666" Y="4.855" />
+        <Point X="18.666" Y="10.473" />
+        <Point X="5.5" Y="10.473" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAgAAgQgAAAAAAAAAAAAAEAgAAE=</HashCode>
+      <FileName>Entities\ExamPeriod.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PeriodType" />
+      <Property Name="CreatedBy" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Exams" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PastExamsHub.Core.Domain.Entities.ExamPeriodExam">
+    <Position X="14.5" Y="6.25" Width="1.5" />
+    <AssociationLine Name="ExamPeriod" Type="PastExamsHub.Core.Domain.Entities.ExamPeriod" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.562" Y="6.25" />
+        <Point X="15.562" Y="6.126" />
+        <Point X="15.562" Y="6.126" />
+        <Point X="15.562" Y="5.454" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.015" Y="0.081" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Exam" Type="PastExamsHub.Core.Domain.Entities.Exam" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.5" Y="6.719" />
+        <Point X="14.125" Y="6.719" />
+        <Point X="14.125" Y="4.67" />
+        <Point X="13.75" Y="4.67" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ExamPeriodExam.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ExamPeriod" />
+      <Property Name="Exam" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PastExamsHub.Core.Domain.Entities.File">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <AssociationLine Name="Type" Type="PastExamsHub.Core.Domain.Enums.FileType">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.072" Y="0.098" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAABAAAAAAAAAAAAAAAEAQBAAABAAAA=</HashCode>
+      <FileName>Entities\File.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PastExamsHub.Core.Domain.Entities.ExamSolutionGrade">
+    <Position X="6.5" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAABABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Entities\ExamSolutionGrade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+      <Property Name="Solution" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="PastExamsHub.Core.Enums.RoleType">
+    <Position X="2.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAABAAABA=</HashCode>
+      <FileName>Enums\RoleType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PastExamsHub.Core.Domain.Enums.FileType">
+    <Position X="7.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAABACAAAAAAAAABA=</HashCode>
+      <FileName>Enums\FileType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PastExamsHub.Core.Domain.Enums.StudyType">
+    <Position X="4.75" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAABQ=</HashCode>
+      <FileName>Enums\StudyType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PastExamsHub.Core.Domain.Enums.ExamType">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAACQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ExamType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PastExamsHub.Core.Domain.Enums.ExamPeriodType">
+    <Position X="16.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAIAgAABAAAAAAAAABAAAAAAAAAAAECBA=</HashCode>
+      <FileName>Enums\ExamPeriodType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PastExamsHub.Core.Domain.Enums.CourseType">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKABA=</HashCode>
+      <FileName>Enums\CourseType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
